@@ -2,7 +2,7 @@
 
 Taskwarrior commands extension. See [WIKI](https://github.com/LikiPiki/taskwarriorExtension/wiki) for more details!
 
-## Ffeatures
+## Features
 - fast, written on golang language 
 - simply customizable and extensible
 - zero configuration
