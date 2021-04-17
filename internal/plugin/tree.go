@@ -41,8 +41,6 @@ func (t *TreePlugin) ParseArguments(args []string) bool {
 
 // Main plugin logic
 func (t *TreePlugin) Command() error {
-	fmt.Println("This is plugin", t.Project)
-
 	projectTasks := make(map[string][]taskwarrior.Task)
 	completed := 0
 	all := 0
@@ -69,7 +67,7 @@ func (t *TreePlugin) Command() error {
 		delete(projectTasks, t.Project)
 
 		for key := range projectTasks {
-			fmt.Println("\t", key)
+			fmt.Println("  ", key)
 
 			for i, task := range projectTasks[key] {
 				treePrintTask(i, task)
@@ -86,7 +84,7 @@ func treePrintTask(i int, task taskwarrior.Task) {
 	}
 
 	fmt.Println(
-		"\t\t",
+		"    ",
 		utilities.ColorString(fmt.Sprintf("%d", i+1), "orange", "bold"),
 		task.Description,
 		utilities.ColorString(fmt.Sprintf("%f", task.Urgency), "orange", "bold"),
