@@ -6,6 +6,7 @@ Taskwarrior commands extension. See [WIKI](https://github.com/LikiPiki/taskwarri
 - fast, written on golang language 
 - simply customizable and extensible
 - zero configuration
+- colorfull output
 
 ## Installation
 
@@ -16,3 +17,7 @@ go install github.com/likipiki/taskwarriorExtension ./cmd/tj
 ```
 ## Avaliable commands
 - `tj tree [project-name]` -- show project and subprojects tasks like tree
+
+## References
+-  [TaskWarrior](https://taskwarrior.org)
+-  [go-taskwarrior library](https://github.com/jubnzv/go-taskwarrior)
