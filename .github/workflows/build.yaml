@@ -28,9 +28,6 @@ jobs:
         fi
         go get github.com/mitchellh/gox
 
-    - name: Testing
-      run: go test -v ./...
-    
     - name: Building
       run: go build -v ./cmd/tj
 
@@ -42,80 +39,3 @@ jobs:
       with:
         name: bins
         path: ./build/
-
-  deploy:
-      runs-on: ubuntu-latest
-      if: github.ref == 'refs/heads/master'
-      needs: [build]
-      steps:
-        - name: Variables
-          id: vars
-          run: |
-            echo "::set-output name=date::$(date +'%d-%m-%Y')"
-            echo "::set-output name=time::$(date +'%H:%M')"
-            echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
-        - name: Download artifacts
-          uses: actions/download-artifact@v2
-          with:
-            name: bins
-        
-        - name: Create Release
-          uses: actions/create-release@v1
-          id: create_release
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            tag_name: tj-${{ steps.vars.outputs.sha8 }}
-            release_name: Build for (${{steps.vars.outputs.time}} ${{ steps.vars.outputs.date }})
-            draft: false
-            prerelease: false
-
-        - name: Upload binaries assets linux-386
-          uses: actions/upload-release-asset@v1
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: ./tj_linux_386
-            asset_name: tj_linux_386
-            asset_content_type: application/octet-stream
-
-        - name: Upload binaries assets linux-amd64
-          uses: actions/upload-release-asset@v1
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: ./tj_linux_amd64
-            asset_name: tj_linux_amd64
-            asset_content_type: application/octet-stream
-
-        - name: Upload binaries assets windows-386
-          uses: actions/upload-release-asset@v1
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: ./tj_windows_386.exe
-            asset_name: tj_windows_386.exe
-            asset_content_type: application/octet-stream
-
-        - name: Upload binaries assets windows-amd64
-          uses: actions/upload-release-asset@v1
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: ./tj_windows_amd64.exe
-            asset_name: tj_windows_amd64.exe
-            asset_content_type: application/octet-stream
-
-        - name: Upload binaries assets darwin-amd64
-          uses: actions/upload-release-asset@v1
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: ./tj_darwin_amd64
-            asset_name: tj_darwin_amd64
-            asset_content_type: application/octet-stream
