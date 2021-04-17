@@ -15,7 +15,7 @@ type Plugin interface {
 	GetCommandName() string
 	// Get short plugin description with params
 	GetDescription() string
-	// Parse plugin argumens
+	// Parse plugin argumetns
 	ParseArguments(args []string) bool
 	// Main plugin logic
 	Command() error

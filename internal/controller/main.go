@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -26,7 +27,7 @@ func Control() {
 
 	treePlugin := plugin.TreePlugin{}
 
-	plugins := []plugin.Plugin{
+	plugins := plugin.Plugins{
 		&treePlugin,
 	}
 
@@ -45,9 +46,21 @@ func Control() {
 					if err != nil {
 						log.Println(err)
 					}
+					break
 				}
 			}
 		}
+	} else {
+		ShowHelp(plugins)
+	}
+}
 
+func ShowHelp(plugins plugin.Plugins) {
+	fmt.Println("tj -- is simple command line tool, provide new functionality for taskwarrior.\n")
+	fmt.Println("Usage:\n  tj [command]\n")
+	fmt.Println("Avalible commands:")
+
+	for _, plugin := range plugins {
+		fmt.Printf("  %s  %s\n", plugin.GetCommandName(), plugin.GetDescription())
 	}
 }

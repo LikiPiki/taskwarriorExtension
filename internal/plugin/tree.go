@@ -30,7 +30,7 @@ func (t *TreePlugin) GetDescription() string {
 	return "Show project task as tree with summary"
 }
 
-// Parse plugin argumens
+// Parse plugin arguments
 func (t *TreePlugin) ParseArguments(args []string) bool {
 	if len(args) > 0 {
 		t.Project = args[0]
