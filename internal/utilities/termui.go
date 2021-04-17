@@ -2,6 +2,7 @@ package utilities
 
 import "fmt"
 
+// Draw simple console progress bar
 func ProgressBarString(size, completed, all int) string {
 	completedPercent := float32(completed) / float32(all) * 100
 	progressBar := ""

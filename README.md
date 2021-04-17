@@ -1,7 +1,7 @@
 # Taskwarrior Extension 
 
 
-Taskwarrior commands extension. See WIKI!
+Taskwarrior commands extension. [See WIKI](https://github.com/LikiPiki/taskwarriorExtension/wiki) for more details!
 
 ## Installation
 
@@ -11,4 +11,4 @@ If you have got Golang installed on your machine, use this command. Else, downlo
 go install github.com/likipiki/taskwarriorExtension ./cmd/tj
 ```
 ## Avaliable commands
-- tree [project-name] --- show project and subprojects task like tree
+- tree [project-name] -- show project and subprojects task like tree

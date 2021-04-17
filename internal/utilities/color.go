@@ -24,6 +24,7 @@ var (
 	}
 )
 
+// Colorize string
 func ColorString(text, color, font string) string {
 	if font == "" {
 		font = "normal"
