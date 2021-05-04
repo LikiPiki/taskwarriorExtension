@@ -1,4 +1,6 @@
-# Taskwarrior Extension 
+# Taskwarrior Extension ![build](https://github.com/likipiki/taskwarriorExtension/actions/workflows/build.yaml/badge.svg
+)
+
 
 Taskwarrior commands extension. See [Documentation](https://likipiki.github.io/taskwarriorExtension/) for more details!
 
