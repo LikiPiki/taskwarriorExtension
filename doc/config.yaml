@@ -1,0 +1,21 @@
+baseURL: https://likipiki.github.io/taskwarriorExtension
+title: Tj Extensions
+theme: book
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 1
+
+menu:
+  after:
+    - name: "Github"
+      url: "https://github.com/LikiPiki/taskwarriorExtension"
+      weight: 10
+
+params:
+  BookTheme: "light"
+  BookToC: true
+  BookSection: docs
