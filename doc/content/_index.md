@@ -7,7 +7,7 @@ draft: false
 ---
 
 # Taskwarrior Extension 
-![build](https://github.com/likipiki/taskwarriorExtension/actions/workflows/build.yaml/badge.svg
+![build](https://github.com/likipiki/taskwarriorExtension/actions/workflows/build.yaml/badge.svg)
 
 Taskwarrior commands extension. See [Wiki](https://github.com/LikiPiki/taskwarriorExtension/wiki) for more details!
 
