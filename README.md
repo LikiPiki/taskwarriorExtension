@@ -1,6 +1,6 @@
 # Taskwarrior Extension 
 
-Taskwarrior commands extension. See [Wiki](https://github.com/LikiPiki/taskwarriorExtension/wiki) for more details!
+Taskwarrior commands extension. See [Documentation](https://likipiki.github.io/taskwarriorExtension/) for more details!
 
 ## Features
 - fast, written on golang language 
@@ -10,7 +10,7 @@ Taskwarrior commands extension. See [Wiki](https://github.com/LikiPiki/taskwarri
 
 ## Installation
 
-If you have got Golang installed on your machine, use this command. Else, see instructions in [Wiki](https://github.com/LikiPiki/taskwarriorExtension/wiki#installing-from-binary-file)
+If you have got Golang installed on your machine, use this command. Else, see instructions in [Documentation](https://likipiki.github.io/taskwarriorExtension/)
 
 ```console
 go install github.com/likipiki/taskwarriorExtension ./cmd/tj
