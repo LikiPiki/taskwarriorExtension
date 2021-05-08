@@ -8,6 +8,7 @@ import (
 	"github.com/jubnzv/go-taskwarrior"
 
 	"github.com/likipiki/tj/internal/plugin"
+	"github.com/likipiki/tj/internal/utilities"
 )
 
 type Controller struct {
@@ -27,8 +28,13 @@ func Control() {
 
 	treePlugin := plugin.TreePlugin{}
 
+	contextPlugin := plugin.ContextPlugin{}
+	addPlugin := plugin.AddPlugin{}
+
 	plugins := plugin.Plugins{
 		&treePlugin,
+		&contextPlugin,
+		&addPlugin,
 	}
 
 	for _, plugin := range plugins {
@@ -48,6 +54,8 @@ func Control() {
 					}
 					break
 				}
+				fmt.Println(utilities.ColorString("Plugin usage:\n  ", "orange", "") + plugin.GetUsage())
+				break
 			}
 		}
 	} else {
@@ -61,6 +69,7 @@ func ShowHelp(plugins plugin.Plugins) {
 	fmt.Println("Avalible commands:")
 
 	for _, plugin := range plugins {
-		fmt.Printf("  %s  %s\n", plugin.GetCommandName(), plugin.GetDescription())
+		// %-4s - longest command name length
+		fmt.Printf("  %-4s -- %s\n", plugin.GetCommandName(), plugin.GetDescription())
 	}
 }
