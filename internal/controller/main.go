@@ -27,14 +27,15 @@ func Control() {
 	args := os.Args[1:]
 
 	treePlugin := plugin.TreePlugin{}
-
 	contextPlugin := plugin.ContextPlugin{}
 	addPlugin := plugin.AddPlugin{}
+	splitPlugin := plugin.SplitPlugin{}
 
 	plugins := plugin.Plugins{
 		&treePlugin,
 		&contextPlugin,
 		&addPlugin,
+		&splitPlugin,
 	}
 
 	for _, plugin := range plugins {
@@ -64,7 +65,7 @@ func Control() {
 }
 
 func ShowHelp(plugins plugin.Plugins) {
-	fmt.Println("tj -- is simple command line tool, provide new functionality for taskwarrior.\n")
+	fmt.Println("tj -- is simple command-line tool, which provide new functionality for taskwarrior.\n")
 	fmt.Println("Usage:\n  tj [command]\n")
 	fmt.Println("Avalible commands:")
 
