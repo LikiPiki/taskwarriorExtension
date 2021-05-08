@@ -33,7 +33,7 @@ jobs:
       run: go build -v ./cmd/tj
 
     - name: Crosscompile build
-      run: gox -osarch="linux/amd64 linux/386 linux/arm windows/amd64 windows/386 darwin/amd64" -output "build/{{.Dir}}_{{.OS}}_{{.Arch}}" ./... 
+      run: gox -osarch="linux/amd64 linux/386 linux/arm darwin/amd64" -output "build/{{.Dir}}_{{.OS}}_{{.Arch}}" ./... 
 
     - name: Uploading artifacts  
       uses: actions/upload-artifact@v2
