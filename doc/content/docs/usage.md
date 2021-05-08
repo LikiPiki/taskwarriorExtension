@@ -12,12 +12,13 @@ draft: false
 - [Commands](#commands)
   - [Task tree view](#task-tree-view)
   - [Adding new tasks with context](#adding-new-tasks-with-context)
+  - [Split tasks to smaller ones](#split-tasks-to-smaller-ones)
 
 ## Help
 
 If yue run `tj` without arguments, you can find a little documentation about all commands and simple usage.
 
-```console
+```
 tj -- is simple command line tool, provide new functionality for taskwarrior.
 
 Usage:
@@ -66,13 +67,46 @@ tj ctx project:home.kitchen +home due:today
 ```
 And now we can create our tasks like this:
 ```
-task add Buy milk
-task add Wash the dishes
-task add Buy flowers
+tj add Buy milk
+tj add Wash the dishes
+tj add Buy flowers
 ```
 
 Your latest context stored in `~/.tjrc` yaml file. You can always check current context with `ctx` command without arguments:
 ```
 tj ctx
+```
+Output:
+```
 Current context: project:home.kitchen +home
+```
+
+## Split tasks to smaller ones
+
+`tj sp` provide functiolity to split tasks to smaller ones. 
+For example, we have got this tasklist. I use `task ls` command to show this:
+
+```
+ID D Project Tags    Description
+-----------------------------------------
+ 8                   Another cool task
+ 1   home    kitchen Wash dishes
+```
+
+Now, we want to split task 8 to smaller ones.
+```
+tj sp 8 Smaller task
+```
+Output:
+```
+Creating new task: Smaller task
+Created task 9.
+Updating task8 
+Modifying task 8 'Another cool task'.
+Modified 1 task.
+```
+This command similar this commands chain:
+```
+task add Smaller task
+task 8 modify dep:9
 ```

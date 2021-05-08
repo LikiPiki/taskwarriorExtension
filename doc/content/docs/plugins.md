@@ -24,27 +24,32 @@ type MyPlugin struct{
 
 // Initialize plugin
 func (p *MyPlugin) Init(tasks []taskwarrior.Task) {
-        p.Tasks = tasks
+        p.InitTasks(tasks)
 }
 
 // Get plugin name
 func (p *MyPlugin) GetCommandName() string {
-        panic("not implemented") // TODO: Implement
+	panic("not implemented") // TODO: Implement
 }
 
 // Get short plugin description with params
 func (p *MyPlugin) GetDescription() string {
-        panic("not implemented") // TODO: Implement
+	panic("not implemented") // TODO: Implement
 }
 
-// Parse plugin arguments
+// Get short plugin usage string
+func (p *MyPlugin) GetUsage() string {
+	panic("not implemented") // TODO: Implement
+}
+
+// Parse plugin argumetns
 func (p *MyPlugin) ParseArguments(args []string) bool {
-        panic("not implemented") // TODO: Implement
+	panic("not implemented") // TODO: Implement
 }
 
 // Main plugin logic
 func (p *MyPlugin) Command() error {
-        panic("not implemented") // TODO: Implement
+	panic("not implemented") // TODO: Implement
 }
 ```
 
