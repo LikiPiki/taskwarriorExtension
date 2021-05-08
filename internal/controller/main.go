@@ -71,6 +71,6 @@ func ShowHelp(plugins plugin.Plugins) {
 
 	for _, plugin := range plugins {
 		// %-4s - longest command name length
-		fmt.Printf("  %-5s -- %s\n", plugin.GetCommandName(), plugin.GetDescription())
+		fmt.Printf("  %-4s -- %s\n", plugin.GetCommandName(), plugin.GetDescription())
 	}
 }

@@ -19,10 +19,11 @@ go install github.com/likipiki/taskwarriorExtension ./cmd/tj
 
 ## Avaliable commands
 - `tj tree [project-name]` -- show project and subprojects tasks like tree
-- `tj ctx [context]` -- Add new context
+- `tj ctx [context]` -- Setting up new context
 - `tj add [task]` -- Add new task with context
 
 [Read more about commands](https://likipiki.github.io/taskwarriorExtension/docs/usage)
+
 ## Development
 Branching model, plugin creation and others your can find in the [Development](https://likipiki.github.io/taskwarriorExtension/docs/development/) page.
 

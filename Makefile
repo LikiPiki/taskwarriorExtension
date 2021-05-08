@@ -1,5 +1,5 @@
 default:
 	go build ./cmd/tj
 
-install:
+install: default
 	go install ./cmd/tj
