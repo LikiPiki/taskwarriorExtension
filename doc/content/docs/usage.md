@@ -6,7 +6,14 @@ draft: false
 ---
 # Usage
 
-# Help
+**Table of contents**
+- [Usage](#usage)
+  - [Help](#help)
+- [Commands](#commands)
+  - [Task tree view](#task-tree-view)
+  - [Adding new tasks with context](#adding-new-tasks-with-context)
+
+## Help
 
 If yue run `tj` without arguments, you can find a little documentation about all commands and simple usage.
 
@@ -17,10 +24,13 @@ Usage:
   tj [command]
 
 Avalible commands:
-  tree  Show project task as tree with summary
+  tree -- Show project task as tree with summary
+  ctx  -- Add context to adding task
+  add  -- Add new task, using context
 ```
 
-# Task tree view
+# Commands
+## Task tree view
 Command `tj tree my-project`. Show all tasks in `my-project` project with subprojects like a tree.
 Ignoring deleted tasks, show only pending and completed tasks with progress bar.
 
@@ -39,4 +49,30 @@ Project: my-project [############------------------] 40.00%
    my-project.subproject2
      1 New task here 10.880600
      2 Bla bla bla task 10.880600
+```
+
+## Adding new tasks with context
+
+For example, you need to create several tasks in one project with similar tags. In default taskwarrior u need to type something like this:
+```
+task add project:home.kitchen +home due:today Buy milk
+task add project:home.kitchen +home due:today Wash the dishes
+task add project:home.kitchen +home due:today Buy flowers
+```
+
+Tj context can solve this problem. First, create context. The context is similar worlds for all this tasks.
+```
+tj ctx project:home.kitchen +home due:today
+```
+And now we can create our tasks like this:
+```
+task add Buy milk
+task add Wash the dishes
+task add Buy flowers
+```
+
+Your latest context stored in `~/.tjrc` yaml file. You can always check current context with `ctx` command without arguments:
+```
+tj ctx
+Current context: project:home.kitchen +home
 ```

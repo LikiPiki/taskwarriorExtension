@@ -30,6 +30,10 @@ func (t *TreePlugin) GetDescription() string {
 	return "Show project task as tree with summary"
 }
 
+func (t *TreePlugin) GetUsage() string {
+	return "tj tree [project]"
+}
+
 // Parse plugin arguments
 func (t *TreePlugin) ParseArguments(args []string) bool {
 	if len(args) > 0 {
