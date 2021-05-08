@@ -9,6 +9,7 @@ bookToc: true
 
 ## Create new plugin
 Plugins provide support to add new functionality. The first step, create a new plugin file in `internal/plugin/` directory and declare a new plugin. This is a simple plugin code example.
+
 ```go
 package plugin
 
@@ -46,6 +47,13 @@ func (p *MyPlugin) Command() error {
         panic("not implemented") // TODO: Implement
 }
 ```
+
+You can manually generate plugin interface by following command:
+```console
+impl 'p *MyPlugin' github.com/likipiki/tj/internal/plugin.Plugin
+```
+
+First install `impl` tool from [here](https://github.com/josharian/impl).
 
 ## Plugin Registration
 
