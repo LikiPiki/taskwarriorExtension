@@ -66,12 +66,12 @@ func (c *Config) UpdateConfig() {
 	homeDir := os.Getenv("HOME")
 	configPath := homeDir + configFile
 
-	bytes, err := yaml.Marshal(*c)
+	bytes, err := yaml.Marshal(c)
 	if err != nil {
 		log.Fatalf("error")
 	}
 
-	f, err := os.OpenFile(configPath, os.O_WRONLY|os.O_CREATE, 0666)
+	f, err := os.OpenFile(configPath, os.O_WRONLY|os.O_TRUNC, 0755)
 
 	if err != nil {
 		log.Println("Cannot update config file", err)
