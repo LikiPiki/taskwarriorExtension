@@ -91,6 +91,6 @@ func treePrintTask(i int, task taskwarrior.Task) {
 		"    ",
 		utilities.ColorString(fmt.Sprintf("%d", i+1), "orange", "bold"),
 		task.Description,
-		utilities.ColorString(fmt.Sprintf("%f", task.Urgency), "orange", "bold"),
+		utilities.ColorString(fmt.Sprintf("%.2f", task.Urgency), "orange", "bold"),
 	)
 }
