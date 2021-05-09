@@ -10,11 +10,14 @@ Taskwarrior commands extension. See [Documentation](https://likipiki.github.io/t
 - colorfull output
 
 ## Installation
-If you have got Golang installed on your machine, use this command. Else, see instructions in [Documentation](https://likipiki.github.io/taskwarriorExtension/#installation)
+If you have got Golang installed on your machine, use this command.
 
 ```console
 go install github.com/likipiki/taskwarriorExtension ./cmd/tj
 ```
+
+If you have not `Go` installed on your machine, you can use binary executable files from the [release section](https://github.com/LikiPiki/taskwarriorExtension/releases). Or you can build this utility [manually](https://likipiki.github.io/taskwarriorExtension/docs/development/#building).
+
 
 ## Avaliable commands
 - `tj tree [project-name]` -- show project and subprojects tasks like tree
