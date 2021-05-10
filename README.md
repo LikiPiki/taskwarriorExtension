@@ -1,7 +1,7 @@
 # Taskwarrior Extension
 ![build](https://github.com/likipiki/taskwarriorExtension/actions/workflows/build.yaml/badge.svg)
 
-Taskwarrior commands extension. See [WIKI](https://likipiki.github.io/taskwarriorExtension/) for more details!
+Taskwarrior commands extension. See [WIKI](https://github.com/LikiPiki/taskwarriorExtension/wiki) for more details!
 
 ## Features
 - fast, written on golang language 
