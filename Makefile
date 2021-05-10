@@ -3,3 +3,6 @@ default:
 
 install: default
 	go install ./cmd/tj
+
+test:
+	go test ./... --cover

@@ -39,7 +39,7 @@ func (c *Config) GetConfig() *Config {
 		f, err := os.OpenFile(configPath, os.O_WRONLY|os.O_CREATE, 0666)
 
 		if err != nil {
-			log.Fatalf("Error", err)
+			log.Println("Error", err)
 		}
 
 		f.Write(bytes)
@@ -56,7 +56,7 @@ func (c *Config) GetConfig() *Config {
 
 	err = yaml.Unmarshal(yamlFile, &c)
 	if err != nil {
-		log.Fatalf("Unmarshall config file error:", err)
+		log.Println("Unmarshall config file error:", err)
 	}
 
 	return c
