@@ -29,6 +29,9 @@ jobs:
         fi
         go get github.com/mitchellh/gox
 
+    - name: Testing
+      run: go test ./... --cover
+
     - name: Building
       run: go build -v ./cmd/tj
 

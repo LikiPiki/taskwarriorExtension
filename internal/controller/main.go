@@ -65,8 +65,8 @@ func Control() {
 }
 
 func ShowHelp(plugins plugin.Plugins) {
-	fmt.Println("tj -- is simple command-line tool, which provide new functionality for taskwarrior.\n")
-	fmt.Println("Usage:\n  tj [command]\n")
+	fmt.Print("tj -- is simple command-line tool, which provide new functionality for taskwarrior.\n\n")
+	fmt.Print("Usage:\n  tj [command]\n\n")
 	fmt.Println("Avalible commands:")
 
 	for _, plugin := range plugins {
