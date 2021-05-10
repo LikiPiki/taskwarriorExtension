@@ -1,7 +1,7 @@
 # Taskwarrior Extension
-![build](https://github.com/likipiki/taskwarriorExtension/actions/workflows/build.yaml/badge.svg) ![deploy](https://github.com/likipiki/taskwarriorExtension/actions/workflows/hugo.yaml/badge.svg)
+![build](https://github.com/likipiki/taskwarriorExtension/actions/workflows/build.yaml/badge.svg)
 
-Taskwarrior commands extension. See [Documentation](https://likipiki.github.io/taskwarriorExtension/) for more details!
+Taskwarrior commands extension. See [WIKI](https://likipiki.github.io/taskwarriorExtension/) for more details!
 
 ## Features
 - fast, written on golang language 
@@ -10,9 +10,9 @@ Taskwarrior commands extension. See [Documentation](https://likipiki.github.io/t
 - colorfull output
 
 ## Installation
-If you have got Golang installed on your machine, use this command. Else, see instructions in [Documentation](https://likipiki.github.io/taskwarriorExtension/#installation)
+If you have got Golang installed on your machine, use this command. Else, see instructions in [Documentation](https://github.com/LikiPiki/taskwarriorExtension/wiki/Development#building)
 
-```console
+```
 go install github.com/likipiki/taskwarriorExtension ./cmd/tj
 ```
 
@@ -22,12 +22,11 @@ go install github.com/likipiki/taskwarriorExtension ./cmd/tj
 - `tj add [task]` -- Add new task with context
 - `tj sp [task-number] [new-task]` -- Split task to smaller ones
 
-[Read more about commands](https://likipiki.github.io/taskwarriorExtension/docs/usage)
+[Read more about commands](https://github.com/LikiPiki/taskwarriorExtension/wiki#commands)
 
 ## Development
-Branching model, plugin creation and others your can find in the [Development](https://likipiki.github.io/taskwarriorExtension/docs/development/) page.
+Branching model, plugin creation and others your can find in the [Development](https://github.com/LikiPiki/taskwarriorExtension/wiki/Development) page.
 
 ## References
 - [TaskWarrior](https://taskwarrior.org)
 - [go-taskwarrior library](https://github.com/jubnzv/go-taskwarrior)
-- [Hugo static site generator](https://gohugo.io)
