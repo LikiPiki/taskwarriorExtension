@@ -2,6 +2,7 @@ package plugin
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 
 	"github.com/jubnzv/go-taskwarrior"
@@ -63,6 +64,10 @@ func (t *TreePlugin) Command() error {
 		fmt.Print(utilities.ColorString("Project: ", "orange", "bold") + t.Project + " ")
 		fmt.Print(utilities.ProgressBarString(30, completed, all))
 
+		sort.Slice(mainProject, func(i, j int) bool {
+			return mainProject[i].Urgency > mainProject[j].Urgency
+		})
+
 		for i, task := range mainProject {
 			treePrintTask(i, task)
 		}
@@ -72,6 +77,10 @@ func (t *TreePlugin) Command() error {
 
 		for key := range projectTasks {
 			fmt.Println("  ", key)
+
+			sort.Slice(mainProject, func(i, j int) bool {
+				return mainProject[i].Urgency > mainProject[j].Urgency
+			})
 
 			for i, task := range projectTasks[key] {
 				treePrintTask(i, task)
