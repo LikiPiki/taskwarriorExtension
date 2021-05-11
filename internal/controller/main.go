@@ -11,6 +11,10 @@ import (
 	"github.com/likipiki/tj/internal/utilities"
 )
 
+const (
+	version = "0.1"
+)
+
 type Controller struct {
 	Plugins []plugin.Plugin
 }
@@ -53,19 +57,22 @@ func Control() {
 					if err != nil {
 						log.Println(err)
 					}
-					break
+					return
 				}
 				fmt.Println(utilities.ColorString("Plugin usage:\n  ", "orange", "") + plugin.GetUsage())
-				break
+				return
 			}
 		}
-	} else {
-		ShowHelp(plugins)
 	}
+
+	ShowHelp(plugins)
 }
 
 func ShowHelp(plugins plugin.Plugins) {
-	fmt.Print("tj -- is simple command-line tool, which provide new functionality for taskwarrior.\n\n")
+	fmt.Printf(
+		"tj -- is simple command-line tool, which provide new functionality for taskwarrior. Version %s\n",
+		version,
+	)
 	fmt.Print("Usage:\n  tj [command]\n\n")
 	fmt.Println("Avalible commands:")
 
